@@ -2,34 +2,26 @@ package com.example.flash_cardapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class add_card : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_add_card)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val flashcard_question = findViewById<TextView>(R.id.flashcard_question)
-        val flashcard_Answer = findViewById<TextView>(R.id.flashcard_answer)
-        flashcard_question.setOnClickListener {
 
-            flashcard_question.visibility = View.INVISIBLE
-            flashcard_Answer.visibility = View.VISIBLE
-        }
-        val button_add = findViewById<Button>(R.id.button_add)
-        button_add.setOnClickListener {
-            val intent = Intent(this, add_card::class.java)
+        val button_cancel = findViewById<Button>(R.id.button_cancel)
+        button_cancel.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

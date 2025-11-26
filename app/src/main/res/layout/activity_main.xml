@@ -25,5 +25,16 @@
         android:text="Barack Obama"
         android:textAlignment="center"
         android:textSize="40sp" />
+    <Button
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:id="@+id/button_add"
+        android:layout_below="@id/flashcard_answer"
+        android:background="@drawable/plus_circle_svgrepo_com"
+        android:layout_alignParentEnd="true"
+        android:paddingTop="30dp"
+        />
+
+
 
 </RelativeLayout>
